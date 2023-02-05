@@ -22,7 +22,7 @@ app.listen(process.env.PORT, () => {
 });
 
 app.use(express.json());
-
+const path = require("path");
 const userController = require("./controllers/UserController.js");
 const burgerController = require("./controllers/BurgerController.js");
 const orderController = require("./controllers/OrderController.js");
@@ -30,3 +30,11 @@ const orderController = require("./controllers/OrderController.js");
 app.use("/users", userController); //app.js > userController > userService > userModel
 app.use("/burgers", burgerController); //app.js > burgerController > burgerService > burgerModel
 app.use("/orders", orderController);
+
+app.use(express.static(path.join(__dirname, "public")));
+
+app.get("*", function (_, res) {
+  res.sendFile(path.join(__dirname, "public/index.html"), function (err) {
+    res.status(500).send(err);
+  });
+});
