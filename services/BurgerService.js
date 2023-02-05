@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const { Schema } = mongoose;
 
-const burgerModel = new Schema({
+const burgerSchema = new Schema({
   name: {
     type: String,
     required: true,
@@ -34,6 +34,9 @@ const burgerModel = new Schema({
     default: Date.now(),
   },
 });
+
+const burgerModel = mongoose.model("Burger", burgerSchema);
+
 //functions to handle different requests
 //Get Users
 exports.getBurgers = async (req, res) => {
