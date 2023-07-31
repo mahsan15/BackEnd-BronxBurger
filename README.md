@@ -1,5 +1,7 @@
 # Burger Eats - Web App
 
+![image](https://github.com/mahsan15/BackEnd-BronxBurger/assets/82739557/93f24ee4-2bc6-4b63-9fa1-e012267c7cbc)
+
 Burger Eats is a web application built using Mongoose, which allows users to store their cart items and browse burger details. The application provides CRUD functionalities for managing user and burger models, uses Bycrypt for secure password hashing, and automatically fills the cart upon logging in. The app also features a search bar for easy navigation and allows users to click on burger items for more details. The design is responsive to ensure a seamless experience across different devices.
 
 ## Technologies Used
